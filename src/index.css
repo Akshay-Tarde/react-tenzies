@@ -5,7 +5,7 @@
 body {
   margin: 0;
   background-color: #0B2434;
-  font-family: Inter, sans-serif;
+  font-family: Karla, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@ main {
 }
 
 .die {
-  font-family: Inter, sans-serif;
+  font-family: Karla, sans-serif;
   height: 35px;
   width: 35px;
   color: #2B283A;
