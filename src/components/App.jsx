@@ -20,15 +20,18 @@ export default function App() {
     //         .fill(0)
     //         .map(() => Math.ceil(Math.random() * 6))
     // }
-
-    console.log(diceArray)
+    function rollDice() {
+        setDiceArray(generateAllNewDice())
+    }
 
     const dieMap = diceArray.map(item => <Die value={item}/> )
+
     return (
         <main>
             <div className="dice-container">
                 {dieMap}
             </div>
+            <button className="roll-dice" onClick={rollDice}>ROLL</button>
         </main>
     )
 }
