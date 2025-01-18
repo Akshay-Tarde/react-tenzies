@@ -26,6 +26,24 @@ main {
   align-items: center;
 }
 
+.title,
+.instructions {
+  width: 80%;
+}
+
+.title {
+  font-size: 40px;
+  margin: 0;
+  text-align: center;
+}
+
+.instructions {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+  text-align: center;
+}
+
 .dice-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
