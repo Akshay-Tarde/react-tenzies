@@ -48,6 +48,10 @@ button {
   border-radius: 5px;
 }
 
+.die-held {
+  background-color: #59E391;
+}
+
 .roll-dice {
   background-color: #5035FF;
   padding: 1em 3em;

@@ -31,7 +31,7 @@ export default function App() {
         setDiceArray(generateAllNewDice())
     }
 
-    const dieMap = diceArray.map(item => <Die key={item.id} value={item.value}/> )
+    const dieMap = diceArray.map(item => <Die key={item.id} isHeld={item.isHeld} value={item.value}/> )
 
     return (
         <main>
