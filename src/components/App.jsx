@@ -7,13 +7,17 @@ export default function App() {
         
         for ( let i = 0; i < 10; i++) {
             const randNum = Math.floor(Math.random() * 7)
-            newDice.push(randNum)
+            const obj = {
+                value: randNum,
+                isHeld: false
+            }
+            newDice.push(obj)
         }
         return newDice
     }
     const [diceArray, setDiceArray] = React.useState(generateAllNewDice())
     
-
+    // console.log(diceArray)
     // functional programming approach
     // function generateAllNewDice() {
     //     return new Array(10)
@@ -24,7 +28,7 @@ export default function App() {
         setDiceArray(generateAllNewDice())
     }
 
-    const dieMap = diceArray.map(item => <Die value={item}/> )
+    const dieMap = diceArray.map(item => <Die value={item.value}/> )
 
     return (
         <main>
