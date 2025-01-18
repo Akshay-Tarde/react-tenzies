@@ -27,11 +27,30 @@ export default function App() {
     //         .fill(0)
     //         .map(() => Math.ceil(Math.random() * 6))
     // }
+    
+
+    const dieMap = diceArray.map(item => <Die 
+                                            key={item.id}
+                                            id = {item.id} 
+                                            isHeld={item.isHeld} 
+                                            value={item.value}
+                                            hold={hold}
+                                            /> )
+
     function rollDice() {
         setDiceArray(generateAllNewDice())
     }
 
-    const dieMap = diceArray.map(item => <Die key={item.id} isHeld={item.isHeld} value={item.value}/> )
+    function hold(id) {
+        const dieToHold = diceArray.map(function (item) {
+            if (item.id === id) {
+                item.isHeld = !item.isHeld
+            }
+            return item
+        })
+
+        setDiceArray(dieToHold)
+    }
 
     return (
         <main>
