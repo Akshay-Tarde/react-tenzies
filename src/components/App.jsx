@@ -19,7 +19,11 @@ export default function App() {
         return newDice
     }
     const [diceArray, setDiceArray] = React.useState(generateAllNewDice())
-    
+    const gameWon =  diceArray.every( item => item.isHeld === true) && diceArray.every( item => item.value === diceArray[0].value)
+
+    if (gameWon) {
+            console.log("Game won! ")
+    }
     // console.log(diceArray)
     // functional programming approach
     // function generateAllNewDice() {
@@ -61,7 +65,7 @@ export default function App() {
             <div className="dice-container">
                 {dieMap}
             </div>
-            <button className="roll-dice" onClick={rollDice}>ROLL</button>
+            <button className="roll-dice" onClick={rollDice}>{gameWon ? "NEW GAME" : "ROLL"}</button>
         </main>
     )
 }
