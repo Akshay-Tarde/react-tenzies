@@ -19,7 +19,9 @@ export default function App() {
         }
         return newDice
     }
-    const [diceArray, setDiceArray] = React.useState(generateAllNewDice())
+    const [diceArray, setDiceArray] = React.useState(() => generateAllNewDice())
+    // used the arrow function here as without it, the generateAllNewDice() function runs everytime
+    // the State is changed.
     const gameWon =  diceArray.every( item => item.isHeld === true) && diceArray.every( item => item.value === diceArray[0].value)
 
     if (gameWon) {
